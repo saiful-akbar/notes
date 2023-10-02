@@ -58,6 +58,14 @@
   ```bash
   sudo ./{nama_aplikasi}.run
   ```
+- Buka file `~/.bashrc` pada text editor lalu tambahkan script berikut:
+  ```bash
+  export PATH=$PATH:/opt/lampp/bin
+  ```
+- Kembali ke terminal dan jalankan perintah berikut:
+  ```bash
+  source ~/.bashrc
+  ```
 
 # 2. Windows
 
