@@ -44,6 +44,21 @@
 - **`ssh`** : Menghubungkan ke mesin jarak jauh dengan SSH.
 - **`netstat`** : Menampilkan informasi koneksi jaringan.
 
+## 1.2 Install XAMPP
+- Download xampp untuk linux [disini](https://www.apachefriends.org/download.html).
+- Buka terminal `ctrl+alt+t` dan arahkan pada folder download.
+  ```bash
+  cd ~/Download
+  ```
+- Jalankan perintah berikut untuk merubah permission (izin) file agar bisa diinstal.
+  ```bash
+  sudo chmod +x ./{nama_aplikasi}.run
+  ```
+- Jalankan perintah berikut untu memulai proses instalasi.
+  ```bash
+  sudo ./{nama_aplikasi}.run
+  ```
+
 # 2. Windows
 
 ## 2.1. Activasi MS Office.
