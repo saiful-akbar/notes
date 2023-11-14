@@ -77,3 +77,19 @@
 - Lalu masuk ke dalam folder Office sesuai dengan versi yang kamu gunakan. (Office10, Office13, Office16, atau Office19)
 - Cari dan jalankan `OSPPREARM.EXE` dengan Administrator
 - Tekan YES dan tunggu beberapa waktu sampai proses selesai.
+
+# 3. Laravel Installer
+
+## 3.1. Instalasi
+- Buka terminal `ctrl+alt+t` lalu ketikan perintah berikut:
+  ```bash
+  composer global require laravel/installser
+  ```
+- Buka file `~/.bashrc` dan tambahkan script berikut agar installer dapat dijalankan di seluruh directory.
+  ```python
+  export PATH="~/.config/composer/vendor/bin:$PATH"
+  ```
+- Kembali ke terminal dan jalan perintah berikut untuk mengetesnya.
+  ```bash
+  laravel -v
+  ```
