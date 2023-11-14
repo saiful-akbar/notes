@@ -46,7 +46,7 @@
 
 ## 1.2 Install XAMPP
 - Download xampp untuk linux [disini](https://www.apachefriends.org/download.html).
-- Buka terminal `ctrl+alt+t` dan arahkan pada folder download.
+- Buka terminal `ctrl+alt+t` dan arahkan pada folder tempat aplikasi berada, contoh: download.
   ```bash
   cd ~/Download
   ```
