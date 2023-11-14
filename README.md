@@ -58,7 +58,7 @@
   ```bash
   sudo ./{nama_aplikasi}.run
   ```
-- Buka file `~/.bashrc` pada text editor lalu tambahkan script berikut:
+- Buka file `~/.bashrc` pada text editor lalu tambahkan script berikut agar php dapat dijalankan pada semua directory:
   ```bash
   export PATH=$PATH:/opt/lampp/bin
   ```
