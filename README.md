@@ -67,6 +67,29 @@
   source ~/.bashrc
   ```
 
+## 1.3. Hapus Instalasi
+
+### 1.3.1. menghapus instalasi yang dipasang menggunakan `dpkg`
+
+- Mengetahui Nama Paket:
+  ```bash
+  dpkg -l | grep example
+  ```
+- Menghapus Paket:
+  ```bash
+  sudo dpkg --remove nama_paket
+  ```
+- Menghapus Konfigurasi yang Tidak Dibutuhkan:
+  ```bash
+  sudo dpkg --purge nama_paket
+  ```
+- Memperbarui Database Paket:
+  ```bash
+  sudo apt-get update
+  ```
+
+Jangan lupa menggantikan "nama_paket" dengan nama paket yang sesuai dengan aplikasi yang ingin Anda hapus. Dan selalu berhati-hati saat menghapus paket, pastikan bahwa Anda menghapus paket yang benar-benar tidak dibutuhkan untuk mencegah potensi masalah dengan sistem.
+
 # 2. Windows
 
 ## 2.1. Activasi MS Office.
