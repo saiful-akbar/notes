@@ -75,17 +75,36 @@
   ```bash
   dpkg -l | grep example
   ```
-- Menghapus Paket:
+- Menghapus Paket aplikasi tanpa menghapus file konfigurasi:
   ```bash
   sudo dpkg --remove nama_paket
   ```
-- Menghapus Konfigurasi yang Tidak Dibutuhkan:
+- Menghapus paket aplikasi dan file konfigurasi:
   ```bash
   sudo dpkg --purge nama_paket
   ```
 - Memperbarui Database Paket:
   ```bash
   sudo apt-get update
+  ```
+  
+### 1.3.2. menghapus instalasi yang dipasang menggunakan `apt`
+
+- Cari nama paket:
+  ```bash
+  apt list --installed | grep nama_aplikasi
+  ```
+- Hapus aplikasi
+  ```bash
+  # Hapus hanya aplikasi tanpa menghapus file konfigurasi.
+  sudo apt-get remove nama_paket
+
+  # Hapus aplikasi beserta semua file konfigurasinya.
+  sudo apt-get purge nama_paket
+  ```
+- Bersihkan paket yang tidak digunakan:
+  ```bash
+  sudo apt-get autoremove && sudo apt autoclean
   ```
 
 Jangan lupa menggantikan "nama_paket" dengan nama paket yang sesuai dengan aplikasi yang ingin Anda hapus. Dan selalu berhati-hati saat menghapus paket, pastikan bahwa Anda menghapus paket yang benar-benar tidak dibutuhkan untuk mencegah potensi masalah dengan sistem.
