@@ -97,14 +97,14 @@
 - Hapus aplikasi
   ```bash
   # Hapus hanya aplikasi tanpa menghapus file konfigurasi.
-  sudo apt-get remove nama_paket
+  sudo apt remove nama_paket
 
   # Hapus aplikasi beserta semua file konfigurasinya.
-  sudo apt-get purge nama_paket
+  sudo apt purge nama_paket
   ```
 - Bersihkan paket yang tidak digunakan:
   ```bash
-  sudo apt-get autoremove && sudo apt autoclean
+  sudo apt autoremove && sudo apt autoclean
   ```
 
 Jangan lupa menggantikan "nama_paket" dengan nama paket yang sesuai dengan aplikasi yang ingin Anda hapus. Dan selalu berhati-hati saat menghapus paket, pastikan bahwa Anda menghapus paket yang benar-benar tidak dibutuhkan untuk mencegah potensi masalah dengan sistem.
