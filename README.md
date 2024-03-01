@@ -3,11 +3,13 @@
 ## 1.1. Perintah dasar terminal ubuntu
 
 ### 1.1.1. Navigasi dan Manajemen Direktori:
+
 - **`pwd`** : Menampilkan direktori kerja saat ini.
 - **`ls`** : Menampilkan daftar file dan direktori di direktori saat ini.
 - **`cd`** : Mengganti direktori kerja.
 
 ### 1.1.2. Manipulasi File dan Direktori:
+
 - **`mkdir`** : Membuat direktori baru.
 - **`touch`** : Membuat file kosong.
 - **`cp`** : Menyalin file atau direktori.
@@ -15,36 +17,45 @@
 - **`rm`** : Menghapus file atau direktori.
 
 ### 1.1.3. Perintah Pencarian:
+
 - **`find`** : Mencari file atau direktori.
 
 ### 1.1.4. Perintah Informasi Sistem:
+
 - **`uname`** : Menampilkan informasi kernel sistem.
 - **`lsb_release`** : Menampilkan informasi distribusi.
 
 ### 1.1.5. Manajemen Proses:
+
 - **`ps`** : Menampilkan daftar proses yang berjalan.
 - **`kill`** : Menghentikan proses.
 
 ### 1.1.6. Paket dan Manajemen Aplikasi:
+
 - **`apt-get` (atau apt)`**: Manajemen paket Debian.
 - **`dpkg`** : Manajemen paket yang terinstal.
 
 ### 1.1.7. Perintah Izin File:
+
 - **`chmod`** : Mengubah izin file/direktori.
 
 ### 1.1.8. Perintah Pencarian Teks:
+
 - **`grep`** : Mencari teks dalam file.
 
 ### 1.1.9. Perintah Kompresi/Decompression:
+
 - **`tar`** : Mengompresi/dekompresi file/direktori.
 
 ### 1.1.10. Networking:
+
 - **`ifconfig`** : Menampilkan informasi antarmuka jaringan.
 - **`ping`** : Mengirim paket ke host jaringan.
 - **`ssh`** : Menghubungkan ke mesin jarak jauh dengan SSH.
 - **`netstat`** : Menampilkan informasi koneksi jaringan.
 
 ## 1.2 Install XAMPP
+
 - Download xampp untuk linux [disini](https://www.apachefriends.org/download.html).
 - Buka terminal `ctrl+alt+t` dan arahkan pada folder tempat aplikasi berada, contoh: download.
   ```bash
@@ -87,7 +98,7 @@
   ```bash
   sudo apt-get update
   ```
-  
+
 ### 1.3.2. menghapus instalasi yang dipasang menggunakan `apt`
 
 - Cari nama paket:
@@ -95,6 +106,7 @@
   apt list --installed | grep nama_aplikasi
   ```
 - Hapus aplikasi
+
   ```bash
   # Hapus hanya aplikasi tanpa menghapus file konfigurasi.
   sudo apt remove nama_paket
@@ -102,6 +114,7 @@
   # Hapus aplikasi beserta semua file konfigurasinya.
   sudo apt purge nama_paket
   ```
+
 - Bersihkan paket yang tidak digunakan:
   ```bash
   sudo apt autoremove && sudo apt autoclean
@@ -112,6 +125,7 @@ Jangan lupa menggantikan "nama_paket" dengan nama paket yang sesuai dengan aplik
 # 2. Windows
 
 ## 2.1. Activasi MS Office.
+
 - Buka folder di local disk `C:/`
 - Lalu cari folder `Program Files (x86)` atau `Program Files`.
 - Buka Program `Files (x86)` untuk Office 32-bit `Program Files` untuk Office 64-bit.
@@ -120,9 +134,10 @@ Jangan lupa menggantikan "nama_paket" dengan nama paket yang sesuai dengan aplik
 - Cari dan jalankan `OSPPREARM.EXE` dengan Administrator
 - Tekan YES dan tunggu beberapa waktu sampai proses selesai.
 
-# 3. Laravel Installer
+# 3. Laravel
 
-## 3.1. Instalasi
+## 3.1. Install Laravel Installer
+
 - Buka terminal `ctrl+alt+t` lalu ketikan perintah berikut:
   ```bash
   composer global require laravel/installser
@@ -134,4 +149,12 @@ Jangan lupa menggantikan "nama_paket" dengan nama paket yang sesuai dengan aplik
 - Kembali ke terminal dan jalan perintah berikut untuk mengetesnya.
   ```bash
   laravel -v
+  ```
+
+## 3.2. Masalah izin pada folder Storage laravel pada linux ubuntu.
+
+- Buka terminla `ctrl+alt+t` dan arahkan pada folder project laravel
+  ```bash
+  sudo chmod -R 777 ./storage
+  sudo chmod -R 777 ./storage/logs
   ```
