@@ -158,3 +158,112 @@ Jangan lupa menggantikan "nama_paket" dengan nama paket yang sesuai dengan aplik
   sudo chmod -R 777 ./storage
   sudo chmod -R 777 ./storage/logs
   ```
+# 4. Struktur Folder Project Aplikasi.
+
+## 4.1. ReactJS Typescript.
+
+```
+my-react-app/
+├── public/                     # File statis yang diakses langsung dari root (favicon, manifest, dll.)
+│   ├── index.html              # Template utama HTML
+│   └── assets/                 # File aset seperti gambar atau font
+│       ├── images/
+│       └── fonts/
+├── src/                        # Folder utama untuk kode aplikasi
+│   ├── assets/                 # Aset internal seperti gambar dan stylesheet
+│   │   ├── images/
+│   │   └── styles/
+│   │       ├── global.scss     # Gaya global
+│   │       └── variables.scss  # Variabel SCSS
+│   ├── components/             # Komponen UI yang dapat digunakan ulang
+│   │   ├── common/             # Komponen umum seperti button, input
+│   │   ├── layout/             # Komponen layout seperti header, footer, sidebar
+│   │   └── specific/           # Komponen khusus untuk halaman tertentu
+│   ├── features/               # Folder khusus untuk fitur aplikasi (per domain/feature)
+│   │   ├── auth/               # Fitur autentikasi (login, register)
+│   │   ├── dashboard/          # Fitur dashboard
+│   │   └── profile/            # Fitur profil pengguna
+│   ├── hooks/                  # Hook React yang dapat digunakan ulang
+│   │   ├── useAuth.ts          # Hook untuk autentikasi
+│   │   └── useFetch.ts         # Hook untuk pengambilan data
+│   ├── layouts/                # Layout utama aplikasi
+│   │   ├── AdminLayout.tsx
+│   │   └── MainLayout.tsx
+│   ├── pages/                  # Halaman utama aplikasi
+│   │   ├── Home/               # Halaman Home
+│   │   │   ├── HomePage.tsx
+│   │   │   └── HomePage.module.scss
+│   │   ├── Login/              # Halaman Login
+│   │   │   ├── LoginPage.tsx
+│   │   │   └── LoginPage.module.scss
+│   │   └── Profile/            # Halaman Profile
+│   │       ├── ProfilePage.tsx
+│   │       └── ProfilePage.module.scss
+│   ├── routes/                 # Definisi rute aplikasi
+│   │   ├── AppRoutes.tsx       # Konfigurasi rute utama
+│   │   └── ProtectedRoute.tsx  # Komponen untuk rute yang membutuhkan autentikasi
+│   ├── services/               # API calls atau fungsi untuk komunikasi dengan server
+│   │   ├── api.ts              # File utama untuk konfigurasi API
+│   │   └── userService.ts      # Contoh service untuk pengguna
+│   ├── store/                  # State management (Redux, Zustand, dll.)
+│   │   ├── slices/             # Slice Redux (per domain)
+│   │   │   ├── authSlice.ts
+│   │   │   └── userSlice.ts
+│   │   └── store.ts            # Konfigurasi store utama
+│   ├── types/                  # Tipe TypeScript untuk aplikasi
+│   │   ├── auth.d.ts           # Tipe untuk autentikasi
+│   │   └── user.d.ts           # Tipe untuk pengguna
+│   ├── utils/                  # Fungsi utilitas yang dapat digunakan ulang
+│   │   ├── formatDate.ts       # Format tanggal
+│   │   └── validateForm.ts     # Validasi form
+│   ├── App.tsx                 # Komponen utama aplikasi
+│   ├── index.tsx               # Entry point aplikasi
+│   └── react-app-env.d.ts      # Deklarasi global untuk TypeScript
+├── tsconfig.json               # Konfigurasi TypeScript
+├── package.json                # Konfigurasi dependensi
+└── README.md                   # Dokumentasi proyek
+```
+
+## Penjelasan
+
+### `public/`
+Folder untuk file yang tidak akan diubah oleh Webpack, seperti favicon, manifest.json, dan gambar publik.
+
+### `src/assets/`
+Menyimpan file statis seperti gambar, ikon, atau stylesheet khusus aplikasi.
+
+### `src/components/`
+Untuk komponen kecil dan dapat digunakan ulang, seperti tombol, formulir, atau komponen layout.
+
+### `src/features/`
+Untuk pengelompokan kode yang spesifik pada fitur (domain-driven).
+
+### `src/hooks/`
+Tempat menyimpan custom hooks untuk menghindari pengulangan logika.
+
+### `src/layouts/`
+Layout utama untuk halaman (Admin, User, dll.).
+
+### `src/pages/`
+Menyimpan halaman utama aplikasi, dengan satu folder per halaman.
+
+### `src/routes/`
+Untuk konfigurasi rute aplikasi, termasuk rute yang dilindungi.
+
+### `src/services/`
+Untuk memisahkan logika API dari komponen.
+
+### `src/store/`
+Untuk pengelolaan state global (misalnya, Redux atau Zustand).
+
+### `src/types/`
+Deklarasi tipe untuk entitas aplikasi (seperti pengguna, produk, dll.).
+
+### `src/utils/`
+Fungsi pembantu yang dapat digunakan di seluruh aplikasi.
+
+## Keuntungan
+- **Organisasi yang Jelas**: Setiap fitur atau domain aplikasi memiliki tempat yang jelas.
+- **Kemudahan Skalabilitas**: Struktur ini mendukung penambahan fitur atau komponen baru tanpa memengaruhi folder lain.
+- **Reusable Components & Hooks**: Komponen dan hook yang umum dapat digunakan di berbagai fitur.
+- **Code Splitting**: Halaman dan fitur dipisahkan, memudahkan implementasi **lazy loading**.
