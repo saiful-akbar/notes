@@ -1,4 +1,4 @@
-# 1. Linux Ubuntu
+# 1. Linux Ubuntu Desktop
 
 ## 1.1. Perintah dasar terminal ubuntu
 
